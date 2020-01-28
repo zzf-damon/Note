@@ -1,0 +1,103 @@
+0 9 * * * /home/zhfypt05/zhfy_crawl/bin/python ~/weixin_second/2wechat.py >> ~/weixin_second/log/wechat`date +\%Y\%m\%d`.log 2>&1
+
+
+*/1 * * * * /home/zhfypt05/zhfy_crawl/bin/python ~/weixin_second/test.py >> ~/weixin_second/log/wechat`date +\%Y\%m\%d`.log 2>&1
+
+
+systemctl status cron.service
+
+
+
+
+
+sudo apt-get install postfix
+sudo dpkg-reconfigure postfix
+
+select-editor 选择使用vim 编辑
+set number 设置vim显示行号
+
+
+行首 0 | 
+行尾 $
+首行 gg
+尾行 G
+跳行 ：n
+跳列 nl
+撤销 u 撤销撤销 U
+
+插入 
+	光标后 a 光标前 i 替换一个字符 r 持续替换 R 
+替换
+	：s/old/new
+查找 / 向下查找 ？ 向上查找
+	：/str 出现在第一行   n 下一个 N 上一个 （\c 取消大小写敏感查找，\C 不取消,默认使用） ：/str\c  
+	* 查找当前光标所在位置的单词  n up N down
+查找及替换
+	:{作用范围}s/{目标}/{替换}/{替换标志}
+	:%s/foo/bar/g会在全局范围(%)查找foo并替换为bar，所有出现都会被替换（g）（空替换标志表示只替换从光标位置开始，目标的第一次出现：）
+	作用范围
+		当前行：
+			:s/foo/bar/g
+			全文：
+			:%s/foo/bar/g
+			选区，在Visual模式下选择区域后输入:，Vim即可自动补全为 :'<,'>。
+			:'<,'>s/foo/bar/g
+			2-11行：
+			:5,12s/foo/bar/g
+			当前行.与接下来两行+2：
+			:.,+2s/foo/bar/g
+	替换标志
+		空替换标志表示只替换从光标位置开始，目标的第一次出现：
+		所有出现都会被替换（g）（）
+		i表示大小写不敏感查找，I表示大小写敏感：
+		:%s/foo/bar/gc
+		回车后Vim会将光标移动到每一次"foo"出现的位置，并提示
+		replace with bar (y/n/a/q/l/^E/^Y)?
+		按下y表示替换，n表示不替换，a表示替换所有，q表示退出查找模式， l表示替换当前位置并退出。^E与^Y是光标移动快捷键
+
+
+复制
+	yy	复制光标所在的整行
+	yy 命令：复制光标所在的整行。在 yy 前可加一个数字 n，表示复制当前行及其后 n-1 行的内容，
+	yw	复制一个单词
+	同 yy 命令一样，可在 yw 之前加一个数字 n，表示复制 n 个指定的单词
+
+粘贴 
+	p 命令：粘贴命令，粘贴当前缓冲区中的内容
+	v 命令：在命令模式下进行文本选择。在需要选择的文本的起始处按下 v 键进入块选择模式，然后移动光标到块尾处。这之间的部分被高亮显示，表	示被选中。选中后，再按下v，可以复制，然后到需要粘贴的地方，按下p则可以粘贴
+
+
+v 命令
+	v 字符可视模式
+	V 行可视模式
+	Ctrl v 进入块可视化模式
+
+
+	va  选中{}中间的内容,不包括{}
+	va{ 选中{}中间内容，包括{}
+	vi( 选中()中间内容
+	vi< 选中<>中间内容
+	vi[ 选中[]中间内容
+	vit 选中中间的内容
+	vi” 选中”"中间内容
+	vi’ 选中”中间的内容、
+	vis 选中一个句子
+	vib 选中一个block
+	viw 选中一个单词
+	vip 选中一个段落
+
+
+	站在岸上学不会游泳   好记性不如烂笔头
+
+
+
+
+
+
+ls 所有文件
+la 包含隐藏的文件
+cd 进入一个文件夹
+cd .. 返回上一层
+vim file_name   查看
+hjkl  左下上右
+

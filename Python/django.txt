@@ -1,0 +1,57 @@
+# django
+
+创建项目 django-admin  startproject 项目名
+manage 一个命令行工具，可以使，我们用多种工具对Django项目进行操作  python manage.py runserver 127.0.0.1:8080
+__init__ 一个空文件，告诉Python这个目录应该被看成包
+settings 项目的配置文件
+urls 项目的URL声明
+wsgi 项目与WSGI兼容的web服务的接口
+
+一 设计表结构
+    1 班级表结构 表名 grade 
+                字段 班级名称 name
+                    成立时间 time
+    2 学生表   表名 students
+                字段 姓名 name
+                    性别  gender
+                    年龄 age
+在settings文件中，通过DATABASES选项进行数据库配置
+'NAME': "zzf", 数据库名
+        'USER':"root", 用户名
+        'PASSWORD':'zhang00a', 数据库密码
+        "host":'localhost', 数据库服务器ip
+        'PORT':'3306', 端口
+在__init__中写入 import pymysql
+pymysql.install_as_MySQLdb()   
+二，创建应用
+在一个项目中可以创建多个应用，每一个应用进行一种业务处理
+终端    进入到创建的项目中  
+ python manage.py startapp myApp
+ admin.py 站点配置
+ models.py 模型
+ views.py  视图
+ 但是还不能用，必须先激活
+
+ python manage.py createsuperuser 创建超级管理员 ，用来后台管理数据
+
+ python manage.py runserver 启动服务
+
+ python manage.py makemigrations 创建迁移文件
+ python manage.py migrate       //对数据库进行初始化   迁移到数据库中，默认为sqlite3数据库
+ python manage.py collectstatic  // 收集静态文件
+ 安装djaneiro 可以在各个编辑器中找
+
+{% 中写程序% }
+{{写变量}}
+
+###### 创建缓存表
+
+python manage.py createcachetable
+
+###### 导出数据 需要先恢复到，原有数据库的配置
+
+python  manage.py dumpdata > data.json
+
+导入数据，配置好需要导入的数据库
+
+python manage.py loaddata data.json

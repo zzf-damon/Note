@@ -1,0 +1,22 @@
+神经网络就是一系列的线性回归
+
+
+sigmoid 激活函数
+
+Image captioning  描述图片
+
+ImageNet 图片分类、
+
+Documentation 论坛 https://discuss.pytorch.org/
+Face generation 人脸生成、
+
+Folder 文件夹
+
+don't repeat yourself 不要复制你的代码
+
+https://pytorch.org/docs/torch
+
+学习率(Learning rate)作为监督学习以及深度学习中重要的超参，其决定着目标函数能否收敛到局部最小值以及何时收敛到最小值。合适的学习率能够使目标函数在合适的时间内收敛到局部最小值。
+
+
+requires_grad=True 时才有 grad

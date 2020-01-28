@@ -1,0 +1,13 @@
+KNN 无参数估计，主要是用来做分类预测拟合
+    数据前期有标签
+    k本身是没有什么关系的，主要用来查找数量
+谁距离远大权重越大，可以看成是di的倒数
+如果k过小 会造成overfitting 过拟合
+如果k等于无穷大的话，就分为两个数据的过多的数据量
+cover 覆盖
+求两个点的中线，如果空间就是求中面
+最近邻  是一个区间，然后求均值
+distance 距离
+distance Measure 
+human perception 人的认知
+iff： if and onlyif

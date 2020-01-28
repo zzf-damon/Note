@@ -1,0 +1,61 @@
+## 创新表空间、用户、授权
+
+/*第1步：创建临时表空间 */
+create temporary tablespace srmis_temp 
+tempfile '/u01/app/oracle/oradata/orclpdb1/srmis_temp.dbf' 
+size 1024m 
+autoextend on 
+next 50m maxsize 2048m 
+extent management local; 
+/*第2步：创建数据表空间 */
+create BIGFILE tablespace srmis 
+logging 
+datafile '/u01/app/oracle/oradata/orclpdb1/srmis.dbf' 
+size 10g 
+autoextend on 
+next 100m maxsize 100g 
+extent management local; 
+/*第3步：创建用户并指定表空间 */
+create user srmis identified by srmis 
+default tablespace srmis 
+temporary tablespace srmis_temp; 
+/*第4步：给用户授予权限 */
+grant connect,resource,dba to srmis;
+
+/* !!!! 数据库密码已修改 srmis, sys, system 为统一密码 */
+/*修改并激活用户*/
+/* 数据库密码:Sk9g&c46YI */
+
+/* 以下两行在 PDB 中无法执行*/
+ALTER USER system IDENTIFIED BY "Sk9g&c46YI";
+ALTER USER system ACCOUNT UNLOCK;
+
+
+ALTER USER srmis IDENTIFIED BY "Sk9g&c46YI";
+ALTER USER srmis ACCOUNT UNLOCK;
+grant connect,resource,dba to srmis;
+
+/* 密码永过期*/
+ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED;
+
+
+启动PDB数据库：
+show con_name
+alter session set container=pdborcl; 
+startup;
+https://www.cnblogs.com/fanyongbin/p/5699482.html
+
+oracle安装：
+https://www.cnblogs.com/sunsiyuan/p/8485418.html
+
+oracle 12c连接pdb
+https://www.cnblogs.com/zx3212/p/6846363.html
+
+
+create temporary tablespace zhfy_temp tempfile 'D:\app\Administrator\virtual\oradata\orcl\orclpdb\zhfy_temp.dbf' size 1024m autoextend on next 50m maxsize 2048m extent management local; 
+
+create BIGFILE tablespace zhfy logging datafile 'D:\app\Administrator\virtual\oradata\orcl\orclpdb\zhfy.dbf' size 10g autoextend on next 100m maxsize 100g extent management local;
+
+create user zhfy identified by zhfy default tablespace zhfy temporary tablespace zhfy_temp;
+
+grant connect,resource,dba to zhfy;

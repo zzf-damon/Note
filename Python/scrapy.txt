@@ -1,0 +1,17 @@
+scrapy startproject 项目名称 // 创建项目
+scrapy genspider baidu.com www.baidu.com // 创建spider
+scrapy genspider -t crawl zhihu www.zhihu.com // 生成知乎版的spider
+scrapy crawl myspider // 执行你的spider，返回爬取结果
+scrapy check // 可以检查项目中是否有错 ，但是需要 先选择spider
+ scrapy list 有多少个spider
+ scrapy fetch --nolog URL  下载网页 // 不生成日志 --header 响应头文件
+ scrapy view URL 请求一个网址，下载，并在浏览器打开
+ scrapy shell URL 请求一个网址，并在终端形成一个命令行交互模式，像一个测试工具
+ scrapy bench 测试下载速度
+
+
+ scrapy 选择器
+ response.selector.xpath('//标签/属性()') 返回一个列表
+ response.selector.css("标签::属性")
+ 上面两个后面都可以加 .extract_first() 选择返回列表中第一个选项
+ 

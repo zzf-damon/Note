@@ -1,0 +1,12 @@
+virtualenv -p /usr/bin/python3  名字
+virtualenv 名字 // 创建虚环境
+source  名字/bin/activate   //激活
+deactivate  //退出
+workon 名字 // 进入虚环境
+
+创建conda虚环境
+conda create --name nlp python=3.6
+conda 进入虚环境
+source activate 名字 // 进入指定虚环境
+conda deactivate 退出
+conda info -e 查看有多少个虚环境

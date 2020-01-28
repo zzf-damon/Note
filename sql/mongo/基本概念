@@ -1,0 +1,7 @@
+基本概念
+	数据库（database）
+	集合（collection）
+	文档（document）
+		在mongodb，数据库和集合都不需要手动创建
+			在我们创建文档所在集合或数据库不存在会自动创建数据库和集合
+		在mongo中数据库和集合都不需要手动创建，database中放collection中放document文档，当创建文档时，如果，数据库和集合没有，会自动创建。

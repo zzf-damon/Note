@@ -1,0 +1,17 @@
+入库太长   SET @@global.sql_mode = "";
+
+set global time_zone = '+8:00';        -- 修改mysql全局时区为北京时间，即我们所在的东8区
+
+flush privileges;                      -- 立即生效
+
+
+navicat 连接mysql 2059 
+Win+R 打开 cmd命令行(Windows为例，Mac类似);管理员
+
+输入mysql -uroot -p登陆mysql，如果提示commod not found，那我们需要先将mysql加入系统环境变量。(如果提示 不是内部或外部命令，那么我们需要加入系统环境变量 具体请参照：Mysql系统环境变量配置) 
+如果嫌麻烦，那么我们也可以先不加入，直接在开始界面下搜索mysql，打开即可,如图。
+登录成功以后使用ALTER USER 'root'@'localhost' IDENTIFIED BY '123456' PASSWORD EXPIRE NEVER来修改加密规则。
+加密规则修改完成后我们可以通过ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456'更新一下我们用户的密码。 
+友情提示：一定要牢记更改后的密码,不然忘了会很麻烦。 
+经过了这三步的操作之后，我们的MySql密码就变成了123456啦。当然密码部分也可以设置成其他的，不一定非要是123456。大功告成~ ^_^,好了大家赶快去试试连接自己的NaviCat吧！ 
+

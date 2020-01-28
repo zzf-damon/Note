@@ -1,0 +1,8 @@
+1、修改 conf content.xml 文件 
+	添加
+			<Resource name="jndi/ZHFY" auth="Container" type="javax.sql.DataSource" driverClassName="oracle.jdbc.driver.OracleDriver" url="jdbc:oracle:thin:@116.55.241.12:1521/ORCLPDB" username="zhfyssfw" password="zhfyssfw" maxTotal="20" maxIdle="5" removeAbandonedOnBorrow="true" removeAbandonedTimeout="180" validationQuery="select * from dual " maxWaitMillis="20000"/>
+
+2、 控制台乱码 
+	修改 conf logging.properties 文件
+		注释 51行 java.util.logging.ConsoleHandler.encoding = UTF-8
+			或 修改为 java.util.logging.ConsoleHandler.encoding = GBK

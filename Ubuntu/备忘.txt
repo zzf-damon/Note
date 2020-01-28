@@ -1,0 +1,78 @@
+https://wsfei.iteye.com/blog/1100534
+https://blog.csdn.net/sinat_27554409/article/details/78227496
+tar cvpzf backup.tgz --exclude=/proc --exclude=/lost+found --exclude=/backup.tgz --exclude=/mnt --exclude=/sys --exclude=/media --exclude=/home/z/program --exclude=/home/home/z/Documents --exclude=/home/z/Music --exclude=/home/z/robo3t --exclude=/home/z/Pictures --exclude=/home/z/Downloads /
+
+
+/opt/tomcat/bin/shutdown.sh   取消tomcat运行
+python切换版本
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 100
+
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150
+
+切换conda与自带系统的Python版本的方法
+在用户状态写入 sudo gedit ~/.bashrc
+修改文件在最后加入
+export PATH="/home/zhfypt06/zhfy_crawl/bin:$PATH"  # 修改Python的默认路径，但是pip不会修改为conda自带
+alias python="/usr/bin/python3.6" #根据自己的系统的python,自己修改路径(有版本号的话精确到版本号)
+alias pyconda="/home/z/anaconda3/bin/python3.7" #根据自己的系统的python,自己修改路径(有版本号的话精确到版本号)
+以上的命名为自己命名
+
+
+alias python="/home/zhfypt06/zhfy_crawl/bin/python"
+alias pip="/home/zhfypt06/zhfy_crawl/bin/pip3"
+
+
+anaconda 启动方法 
+source ~/anaconda3/bin/activate root
+anaconda-navigator
+
+格式化代码
+vscode    ctrl shift i   win  shift alt f
+pycahrm     Ctrl + Alt + L 
+HBuilder    Ctrl + Shift +F      
+HBuilder X   Ctrl + K
+
+修改默认启动项
+sudo gedit /etc/default/grub
+关机卡死
+GRUB_CMDLINE_LINUX=""  将这一条改为 GRUB_CMDLINE_LINUX="apm power_off=1"
+
+ sudo gedit /usr/share/applications/pycharm.desktop
+
+pycahrm 桌面图标
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Pycharm
+Icon=/opt/pycharm/bin/pycharm.svg
+Exec="/opt/pycharm/bin/pycharm.sh" %f
+Comment=The smartest Python IDE
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=jetbrains-pycharm
+
+webstorm 图标
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=WebStorm
+Icon=/opt/webstorm/bin/webstorm.svg
+Exec="/opt/webstorm/bin/webstorm.sh" %f
+Comment=The smartest JavaScript IDE
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=jetbrains-webstorm
+
+anaconda 图标
+[Desktop Entry]
+Version=1.0
+Name=Anaconda
+Type=Application
+GenericName=Anaconda
+Comment=Scientific Python Development Environment - Python3
+Exec=bash -c 'export PATH="/home/<user>/anaconda3/bin:$PATH" && /home/<user>/anaconda3/bin/anaconda-navigator'
+Categories=Development;Science;IDE;Qt;Education;
+Icon=/home/<user>/anaconda3/lib/python3.7/site-packages/anaconda_navigator/static/images/anaconda-icon-256x256.png
+Terminal=anaconda-navigator
+StartupNotify=true
+MimeType=text/x-python;

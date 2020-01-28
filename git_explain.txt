@@ -1,0 +1,62 @@
+git init初始化仓库
+git status查看git状态
+git add路径。//将文件添加到缓存区
+git commit -m“修改说明”//提交文件
+git log //查看记录--oneline一行--all所有--graph图示历史记录
+git check记录前七位//回退到指定版本
+修改了修修改
+已暂存
+承诺已上传
+git tag -a“标签名”-m“描述”//打标签加在最近的一个版本
+git tag -a“标签名”-m“描述”“身份证”//指定版本打标签
+git branch分支名//创建分支
+切换到分支“分支名”//跳到一个分支上
+git checkout master //回到默认分支默认分支是主？
+git checkout -b分支名//创建并切换至分支
+git merge分支名//合并到master默认？
+    冲突需要自己修改
+git remote add远程名字远程地址//远程名字可以自己写
+git remote //列出所有的远程仓库的名字
+git remote rm仓库名//删除一个仓库
+git remote -v //列出所有的详细信息fetch下载地址push上传地址
+git push -u远程名分支名//上传代码
+git clone地址文件名//克隆一个地址
+git push = git fetch && git merge
+
+＃https://biaoyansu.com/27.cheatsheet
+
+
+git config --global user.name "bryan sun"
+git config --global user.email "hitsjt@gmail.com"
+
+查看所有配置
+
+git config -l
+
+
+echo ref: refs/remotes/origin >master.lock
+
+
+
+将一个目录上传到远程
+
+git init
+touch .gitignore
+git remote add 
+
+指定提交仓库
+git remote add science https://gitee.com/zzf-damon/Models
+
+git add .
+git commit -m first
+
+git push --set-upstream go master			
+
+push 出错 error: failed to push some refs to 'https://gitee.com/zzf-damon/Web'
+
+# 合并远程和本地的代码
+git pull --rebase go master
+
+
+# 关联远程分支和本地提交的名字
+ git push -u go master

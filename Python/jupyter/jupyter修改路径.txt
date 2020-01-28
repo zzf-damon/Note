@@ -1,0 +1,8 @@
+sudo gedit /home/z/.jupyter/jupyter_notebook_config.py
+c.NotebookApp.notebook_dir = "修改路径"
+
+# 修改浏览器
+
+import webbrowser
+webbrowser.register("firefox", None, webbrowser.GenericBrowser(u"/usr/bin/firefox"))
+c.NotebookApp.browser = 'firefox'

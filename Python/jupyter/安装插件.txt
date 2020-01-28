@@ -1,0 +1,16 @@
+安装插件
+
+conda install -c conda-forge jupyter_contrib_nbextensions   安装插件
+如果不显示就是没有打开 执行
+    jupyter nbextensions_configurator enable --user
+    jupyter contrib nbextension install --user
+
+
+修改主题
+    安装  pip install --upgrade jupyterthemes
+    使用 jt -t chesterish -T -N
+
+
+# 将ipynb 转为py
+
+jupyter nbconvert --to script 非线性回归_分类.ipynb

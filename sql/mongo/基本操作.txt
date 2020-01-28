@@ -1,0 +1,95 @@
+数据库相关 
+show dbs:显示数据库列表 
+show collections：显示当前数据库中的集合（类似关系数据库中的表table） 
+show users：显示所有用户 
+use yourDB：切换当前数据库至yourDB ，如果没有就会创建
+db.help() ：显示数据库操作命令 
+db.yourCollection.help() ：显示集合操作命令，yourCollection是集合名 
+
+
+## 指定端口
+
+mongod --port 21345 # 默认是27017不要超过65535
+
+
+
+
+#### db 当前数据库
+
+## CRUD 操作
+
+### 插入
+
+```
+db.<collection>.insert(doc) # collection 是一个集合的名字  插入一个文档
+db.stus.insert({name:"孙悟空",age:18,gender:"man"})  
+WriteResult({ "nInserted" : 1 }) 正确返回的结果
+```
+
+### 查询
+
+查询集合中的所有文档
+
+```plsql
+db.<collections>.find({}) # 查询集合中的所有文档
+
+
+find 返回的是一个数组
+findOne 是符合条件的第一个文档
+db.<collections>.find({}).count() 数量
+
+
+
+### 修改
+db.collection.update(查询条件，新对象)  替换 
+
+db.collection.update(
+   <query>,
+   <update>,
+   {
+     upsert: <boolean>,
+     multi: <boolean>,
+     writeConcern: <document>,
+     collation: <document>,
+     arrayFilters: [ <filterdocument1>, ... ]
+   }
+)
+
+db.collection.update({查询条件}，{$set:{需要添加或者修改的属性与值}})  默认情况只会修改一个，而且是匹配到的第一个
+删除一个属性
+db.collection.update({查询条件}，{$unset:{需要添加或者修改的属性与值}})
+
+
+
+updateONe 
+updateMany
+
+
+删除
+remove({条件}) 逻辑上：先find，在delete ，如果不指定就会删除满足情况的所有文档
+remove({条件} ，true) 删除一个
+清空集合
+db.collection.remove() 性能差
+db.collection.drop()  删除集合
+db.dropDatabase()  删除数据库
+
+deleteOne
+deleteMany
+
+
+一般上不会删除数据
+而是创建一个属性，表示是否删除，删除只是表面删除
+
+
+
+
+ mongoexport -d dbname -c collectionname -o file --type json/csv -f field
+-d ：数据库名
+
+-c ：collection名
+
+-o ：输出的文件名
+
+--type ： 输出的格式，默认为json
+
+ -f ：输出的字段，如果-type为csv，则需要加上-f "字段名"

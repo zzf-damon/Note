@@ -1,0 +1,4 @@
+zip
+
+解压
+unzip name.zip
