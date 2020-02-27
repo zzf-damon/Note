@@ -30,13 +30,18 @@ WriteResult({ "nInserted" : 1 }) 正确返回的结果
 
 查询集合中的所有文档
 
+提醒不能简单的根据mongodb中自动生成的_id 进行查找或者修改
+
+	{_id:ObjectId('5e54dad40290b11fae2a18af')}  需要这样写，不然没有效果
+
+
 ```plsql
 db.<collections>.find({}) # 查询集合中的所有文档
 
 
 find 返回的是一个数组
 findOne 是符合条件的第一个文档
-db.<collections>.find({}).count() 数量
+db.<collections>.find({}).	() 数量
 
 
 
