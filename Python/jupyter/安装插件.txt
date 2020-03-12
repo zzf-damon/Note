@@ -14,3 +14,18 @@ conda install -c conda-forge jupyter_contrib_nbextensions   安装插件
 # 将ipynb 转为py
 
 jupyter nbconvert --to script 非线性回归_分类.ipynb
+
+
+
+
+
+修改字体
+
+jupyter中修改字体
+
+
+jt -t grade3 -f fira -fs 12 -N -T -cellw 60% -dfs 9 -ofs 9
+
+
+
+jt -t oceans16 -f fira -fs 12 -cellw 60% -ofs 10 -dfs 11 -T
