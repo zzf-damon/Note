@@ -70,6 +70,18 @@ git pull --rebase go master
 
 
 
+
+git版本控制：如何处理当前分支为*（no branch）的情况
+
+1、git checkout -b 分支名；此时新创建的分支与*（no branch）软件一样
+
+2、 如果想将*（no branch）合并到主分支master，
+	- 执行git log命令，记住第一行的id号
+	- 执行git checkout master命令 此时出现的第一行信息中也会出现一个id号，与之前执行git log中第一行出现的id号是一致的，此时就已经切换到了主分支上来了
+	- 执行git merge id将*（no branch）软件合并到主分支
+
+
+
 喜欢一个女生是如果诞生的：
 	当一个男人还不成熟的时候可能一个不经意间的小细节就能让他暗生情愫，
 而同龄的女孩子此时都处于人生的红利期，经历更加丰富的他们比我们成熟的多，
