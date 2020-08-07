@@ -1,23 +1,59 @@
 0 9 * * * /home/zhfypt05/zhfy_crawl/bin/python ~/weixin_second/2wechat.py >> ~/weixin_second/log/wechat`date +\%Y\%m\%d`.log 2>&1
-
-
 */1 * * * * /home/zhfypt05/zhfy_crawl/bin/python ~/weixin_second/test.py >> ~/weixin_second/log/wechat`date +\%Y\%m\%d`.log 2>&1
 
+*/1 * * * * python ~/test_log.py >> ~/test_log/wechat`date +\%Y\%m\%d`.log 2>&1
 
+0 0 23 * * ~/zhfy_python/bin/python ~/ztcy_zyrw/zyyq_main.py >> ~/ztcy_zyrw_log/zyyq`date +\%Y\%m\%d`.log 2>&1
+0 0 1 * * ~/zhfy_python/bin/python ~/ztcy_zyrw/yqxx_main.py >> ~/ztcy_zyrw_log/yqxx`date +\%Y\%m\%d`.log 2>&1
+0 0 5 */3 * cd ~/ztcy_zyrw && ~/zhfy_python/bin/python ztcy_main.py >> ~/ztcy_zyrw_log/ztcy`date +\%Y\%m\%d`.log 2>&1
+
+* * * * * sh /root/hwy/hello.sh >> /root/hwy/hello.log
+0 24 * * * sh /home/zhfy/clearCache.sh >> /home/zhfy/clear_log/log`date +\%Y\%m\%d`.log 2>&1
+
+
+~/zhfy_python/bin/python ~/ztcy_zyrw/public.py
+ ~/zhfy_python/bin/python ztcy_task.py
+
+ORACLE_HOME=~/instantclient_12_1/
+
+source ~/.bashrc
+
+# 写在sehll中配置环境
+alias python="/home/zhfy/zhfy_python/bin/python"
+alias pip="/home/zhfy/zhfy_python/bin/pip"
+export ORACLE_BASE=/home/zhfy
+export ORACLE_HOME=$ORACLE_BASE/instantclient_12_1/
+export PATH=$ORACLE_HOME:$PATH
+export LD_LIBRARY_PATH=$ORACLE_HOME:${LD_LIBRARY_PATH}
+export NLS_LANG=AMERICAN_AMERICA.UTF8
+
+#!/bin/bash
+su - test <<EOF
+pwd;
+exit;
+EOF
+
+# 重启服务
+sudo service cron start
+# 查看服务状态
 systemctl status cron.service
-
-
-
-
 
 sudo apt-get install postfix
 sudo dpkg-reconfigure postfix
+
+
+
+
+
+
+
+
 
 select-editor 选择使用vim 编辑
 set number 设置vim显示行号
 
 
-行首 0 | 
+行首 0 |
 行尾 $
 首行 gg
 尾行 G
@@ -25,12 +61,12 @@ set number 设置vim显示行号
 跳列 nl
 撤销 u 撤销撤销 U
 
-插入 
-	光标后 a 光标前 i 替换一个字符 r 持续替换 R 
+插入
+	光标后 a 光标前 i 替换一个字符 r 持续替换 R
 替换
 	：s/old/new
 查找 / 向下查找 ？ 向上查找
-	：/str 出现在第一行   n 下一个 N 上一个 （\c 取消大小写敏感查找，\C 不取消,默认使用） ：/str\c  
+	：/str 出现在第一行   n 下一个 N 上一个 （\c 取消大小写敏感查找，\C 不取消,默认使用） ：/str\c
 	* 查找当前光标所在位置的单词  n up N down
 查找及替换
 	:{作用范围}s/{目标}/{替换}/{替换标志}
@@ -62,7 +98,7 @@ set number 设置vim显示行号
 	yw	复制一个单词
 	同 yy 命令一样，可在 yw 之前加一个数字 n，表示复制 n 个指定的单词
 
-粘贴 
+粘贴
 	p 命令：粘贴命令，粘贴当前缓冲区中的内容
 	v 命令：在命令模式下进行文本选择。在需要选择的文本的起始处按下 v 键进入块选择模式，然后移动光标到块尾处。这之间的部分被高亮显示，表	示被选中。选中后，再按下v，可以复制，然后到需要粘贴的地方，按下p则可以粘贴
 
