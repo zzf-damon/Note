@@ -44,15 +44,15 @@ echo ref: refs/remotes/origin >master.lock
 
 git init
 touch .gitignore
-git remote add 
+git remote add
 
 指定提交仓库
-git remote add science https://gitee.com/zzf-damon/Models
+git remote add Recommend https://gitee.com/zzf-damon/recommendation
 
 git add .
 git commit -m first
 
-git push --set-upstream go master			
+git push --set-upstream go master
 
 push 出错 error: failed to push some refs to 'https://gitee.com/zzf-damon/Web'
 
