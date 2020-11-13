@@ -1,0 +1,13 @@
+查看想开的端口是否已开 # firewall-cmd --query-port=8888/tcp    提示no表示未开
+开永久端口号 firewall-cmd --add-port=8888/tcp --permanent   提示    success 表示成功
+重新载入配置  # firewall-cmd --reload    比如添加规则之后，需要执行此命令
+再次查看想开的端口是否已开  # firewall-cmd --query-port=8888/tcp  提示yes表示成功
+若移除端口 # firewall-cmd --permanent --remove-port=8888/tcp
+
+firewall-cmd --query-port=1222/tcp
+
+
+
+
+
+
